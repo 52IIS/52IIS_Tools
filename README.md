@@ -1,14 +1,14 @@
 <div align="center">
   <h1>52IIS Tools</h1>
   <div style="margin-bottom: 20px;display: flex;justify-content: center;align-items: center;">
-    <div align="left" style="width: 20%;text-align: right;">
+    <!-- <div align="left" style="width: 20%;text-align: right;">
       <img src="./doc/logo.png" alt="Logo" height="200" style="vertical-align: middle; margin-right: 10px;">
     </div>
-    <div align="right" style="width: 70%;margin-left: 20px;text-align: left;">
+    <div align="right" style="width: 70%;margin-left: 20px;text-align: left;"> -->
       <p>只需简单几步，即可快速搭建属于自己的在线工具箱。</p>
       <p>本项目基于 <a href="https://github.com/naroat/tools-web" target="_blank">tools-web</a> 进行二次修改创作。</p>
       <p>本项目GitHub地址： <a href="https://github.com/52IIS/52IIS_Tools" target="_blank">https://github.com/52IIS/52IIS_Tools</a></p>
-    </div>
+    <!-- </div> -->
   </div>
 
   [![node](https://img.shields.io/badge/node-18.14.2-red)](https://nodejs.org/)  [![vue](https://img.shields.io/badge/vue-3.3.10-green)](https://vuejs.org/)  [![tailwindcss](https://img.shields.io/badge/tailwindcss-3.3.5-yellow)](https://tailwindcss.com/)  [![elementplus](https://img.shields.io/badge/element--plus-2.7-blue)](https://element-plus.org/)  [![license](https://img.shields.io/github/license/52IIS/52IIS_Tools)](LICENSE)
