@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col mt-3 flex-1">
+  <div class="flex flex-col flex-1 mt-3">
     <DetailHeader :title="info.title"></DetailHeader>
 
-    <div class="p-4 rounded-2xl bg-white">
+    <div class="p-4 bg-white rounded-2xl">
       <div class="mb-3">
         <el-text type="info">将PDF文档的每一页转换为一张图片，支持本地文件。</el-text>
       </div>
@@ -70,8 +70,10 @@
 import { ref, reactive } from 'vue';
 import DetailHeader from '@/components/Layout/DetailHeader/DetailHeader.vue';
 import ToolDetail from '@/components/Layout/ToolDetail/ToolDetail.vue';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
-import pdfjsWorker from 'pdfjs-dist/legacy/build/pdf.worker?url';
+// import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf';
+// import pdfjsWorker from 'pdfjs-dist/legacy/build/pdf.worker?url';
+import * as pdfjsLib from 'pdfjs-dist'
+import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.min?url'
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 

@@ -1,10 +1,10 @@
 <div align="center">
   <pre>
-   ██████   ████   ██████  ██████   ████           ██████   ████    ████   ██       ████   
-██          ██    ██      ██    ██                ██    ██  ██  ██  ██  ██      ██      
-█████    ████     ██      ██     ████             ██    ██  ██  ██  ██  ██       ████   
-    ██  ██        ██      ██        ██            ██    ██  ██  ██  ██  ██          ██  
-█████   ██████  ██████  ██████  ████    ██████    ██     ████    ████   ██████  ████                      
+██████   ████   ██████  ██████   ████   ██████   ████    ████   ██       ████   
+██          ██    ██      ██    ██        ██    ██  ██  ██  ██  ██      ██      
+█████    ████     ██      ██     ████     ██    ██  ██  ██  ██  ██       ████   
+    ██  ██        ██      ██        ██    ██    ██  ██  ██  ██  ██          ██  
+█████   ██████  ██████  ██████  ████      ██     ████    ████   ██████  ████                     
   </pre>
   <p> 只需简单几步，即可快速搭建属于自己的在线工具箱。</p>
   <p> 本项目基于 <a href="https://github.com/naroat/tools-web" target="_blank">tools-web</a> 进行二次修改创作。</p>
@@ -149,4 +149,35 @@ A:
   - 在`router/router.ts`中添加路由
   - 拷贝示例目录`components/Tools/Example`修改名称，在这个拷贝出来的目录中开发工具即可
 
+Q: PDF转图片功能报错怎么办？
+
+A: 如果PDF转图片功能报错，请检查您的Web服务器配置：
+   - IIS服务器：确保已添加.mjs文件的MIME类型映射，设置为"application/javascript"
+   - Nginx服务器：确保配置中包含对.mjs文件的正确MIME类型处理
+   ```
+   types {
+     application/javascript mjs;
+   }
+   ```
+   - 这是因为PDF转图片功能依赖pdfjs-dist库，该库使用.mjs格式的模块文件。
+
+Q: 控制台出现 v-code-diff 相关错误？
+
+![v-code-diff-error](./doc/v-code-diff-error.png)
+
+```
+Error:   Failed to scan for dependencies from entries:
+  E:/OpenSource/52iis.com/52IIS_Tools/index.html
+
+  X [ERROR] Failed to resolve entry for package "v-code-diff". 
+  The package may have incorrect main/module/exports specified in its package.json. [plugin vite:dep-scan]
+```
+
+A: 这是 v-code-diff 包的依赖解析问题，可以通过以下步骤解决：
+   - 首先检查 v-code-diff 包是否正确安装，确保在项目根目录下运行了 `pnpm install`
+   - 如果安装后仍然报错，运行以下命令执行包的后安装脚本：
+     ```bash
+     node ./node_modules/v-code-diff/scripts/postinstall.cjs
+     ```
+   - 该命令会修复 v-code-diff 包的入口文件配置问题
 <br/>  
