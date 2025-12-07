@@ -22,24 +22,15 @@
 
 - [功能展览](#功能展览)
 - [开始使用](#开始使用)
-  - [Docker部署](#Docker部署)
   - [手动部署](#手动部署)
 - [工具列表](#工具列表)
 - [其他](#其他)
 
 ## 功能展示
 
-在线站点：<a href="https://tools.52iis.com" target="_blank">52IIS Tools</a>
+在线站点：<a href="https://www.52iis.com" target="_blank">52IIS Tools</a>
 
 ## 开始使用
-
-### Docker部署(52IIS-Tools-Web)
-
-```
-docker run -d --name 52iis-tools-web --restart unless-stopped -p 8080:80 docker0796/52iis-tools-web:latest
-```
-
-访问：`http://127.0.0.1:8080`
 
 
 ### 手动部署
