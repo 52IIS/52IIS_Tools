@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col mt-3 flex-1">
+  <div class="flex flex-col flex-1 mt-3">
     <DetailHeader :title="info.title"></DetailHeader>
 
-    <div class="p-4 rounded-2xl bg-white">
+    <div class="p-4 bg-white rounded-2xl">
       <div class="mb-3">
         <el-text type="info">支持M3U8直播/点播流在线播放与下载，适用于各类公开流媒体资源。</el-text>
       </div>
@@ -12,7 +12,8 @@
 
       <div class="mt-4">
         <el-button type="primary" @click="loadVideo">加载视频</el-button>
-        <el-button type="primary" @click="fillDemo">示例地址</el-button>
+        <el-button type="primary" @click="fillDemo1">示例地址一</el-button>
+        <el-button type="primary" @click="fillDemo2">示例地址二</el-button>
       </div>
 
       <div v-if="errorMsg" class="mt-3">
@@ -40,11 +41,11 @@
 import { ref, reactive } from 'vue';
 import DetailHeader from '@/components/Layout/DetailHeader/DetailHeader.vue';
 import ToolDetail from '@/components/Layout/ToolDetail/ToolDetail.vue';
-import VideoPlayer from '@/components/VideoPlayer.vue';
+import VideoPlayer from './components/VideoPlayer.vue';
 import type { VideoSource } from '@/types/video';
 
 const info = reactive({
-  title: "🎬 视频播放与下载",
+  title: "🎬 M3U8视频播放与下载",
 });
 
 const videoUrl = ref('');
@@ -64,8 +65,12 @@ const loadVideo = () => {
   };
 };
 
-const fillDemo = () => {
+const fillDemo1 = () => {
   videoUrl.value = 'https://upyun.luckly-mjw.cn/Assets/media-source/example/media/index.m3u8';
+};
+
+const fillDemo2 = () => {
+  videoUrl.value = 'https://dz59iptwz5rxs.cloudfront.net/live/master.m3u8';
 };
 </script>
  
