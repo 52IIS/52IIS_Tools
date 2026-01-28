@@ -2,7 +2,7 @@
 import { reactive, ref } from 'vue'
 import DetailHeader from '@/components/Layout/DetailHeader/DetailHeader.vue'
 import ToolDetail from '@/components/Layout/ToolDetail/ToolDetail.vue'
-import { Delete, Plus, Camera, CopyDocument } from '@element-plus/icons-vue'
+import { Delete, Camera, CopyDocument } from '@element-plus/icons-vue'
 import { ElMessage, type UploadFile } from 'element-plus'
 import jsQR from 'jsqr'
 
@@ -51,10 +51,20 @@ const handleUrlIdentify = () => {
 }
 
 // 移除图片
-const handleRemove = (file: UploadFile) => {
+const handleRemove = (_file?: UploadFile) => {
   info.fileList = []
   info.fileUrl = ''
   info.qrResult = ''
+}
+
+// 复制结果
+const copyResult = () => {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(info.qrResult);
+    ElMessage.success('复制成功');
+  } else {
+    ElMessage.error('浏览器不支持剪贴板功能');
+  }
 }
 
 // 二维码识别核心逻辑
@@ -88,9 +98,8 @@ const decodeQRCode = async () => {
 
     // 使用jsQR识别二维码，优化配置提高识别率
     const code = jsQR(imageData.data, imageData.width, imageData.height, {
-      inversionAttempts: 'attemptBoth',
-      threshold: 128
-    })
+      inversionAttempts: 'attemptBoth'
+    } as any)
 
     if (code) {
       info.qrResult = code.data
@@ -195,10 +204,7 @@ const clearAll = () => {
             />
             <div 
               class="absolute top-2 right-2 text-gray-500 cursor-pointer hover:text-blue-500"
-              @click="() => {
-                navigator.clipboard.writeText(info.qrResult);
-                ElMessage.success('复制成功');
-              }"
+              @click="copyResult"
               title="复制内容"
             >
               <el-icon class="w-5 h-5"><CopyDocument /></el-icon>

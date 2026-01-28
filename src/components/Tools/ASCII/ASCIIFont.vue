@@ -567,11 +567,7 @@ const fontList = Object.entries(fonts).map(([key, value]) => ({
             class="w-full"
             maxlength="20"
             show-word-limit
-          >
-            <template #append>
-              <el-button type="primary" @click="asciiArt">生成</el-button>
-            </template>
-          </el-input>
+          ></el-input>
         </div>
 
         <!-- 字体选择 -->

@@ -9,7 +9,7 @@ import '@codemirror/state';
 import '@codemirror/commands';
 import * as prettier from "prettier/standalone";
 import * as parserBabel from 'prettier/parser-babel';
-import * as prettierPluginEstree from "prettier/plugins/estree";
+import prettierPluginEstree from "prettier/plugins/estree";
 import { ElMessage } from 'element-plus'
 import { minify } from "terser"
 
@@ -69,10 +69,10 @@ const copyRes = async () => {
 </script>
 
 <template>
-  <div class="flex flex-col mt-3 flex-1">
+  <div class="flex flex-col flex-1 mt-3">
     <DetailHeader :title="info.title"></DetailHeader>
 
-    <div class="p-4 rounded-2xl bg-white ">
+    <div class="p-4 bg-white rounded-2xl">
       
       <div>
         <codemirror
@@ -92,7 +92,7 @@ const copyRes = async () => {
         <el-button type="primary" @click="clear">清空</el-button>
       </div>
 
-      <div class="mt-3 min-h-md bg-red-100 p-3 mb-3" v-show="info.isParseErr">
+      <div class="p-3 mt-3 mb-3 bg-red-100 min-h-md" v-show="info.isParseErr">
         <el-text type="danger">{{ info.parseErr }}</el-text>
       </div>
     </div>

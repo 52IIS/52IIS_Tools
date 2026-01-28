@@ -229,7 +229,6 @@ const generateFavicon = async () => {
   let sizes: number[];
   let isAll = false;
   let isSingle = false;
-  let singleSize = 0;
 
   // 处理尺寸选择
   if (selectedSizes.value.includes('all')) {
@@ -238,9 +237,6 @@ const generateFavicon = async () => {
   } else {
     sizes = selectedSizes.value.map(size => Number(size));
     isSingle = sizes.length === 1;
-    if (isSingle) {
-      singleSize = sizes[0];
-    }
   }
 
   // 生成图标

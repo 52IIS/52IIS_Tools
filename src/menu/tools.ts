@@ -172,7 +172,7 @@ export function getToolsCate() {
           title: 'ASCII字形生成器',
           logo: '/images/logo/ascii_word_pic.png',
           desc: '在线生成字形ASCII画',
-          url: '/asciiwordpic/',
+          url: '/asciiFont/',
           cateId: 3,
           cate: '文本处理',
         },

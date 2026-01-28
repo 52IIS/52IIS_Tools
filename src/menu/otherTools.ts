@@ -67,15 +67,7 @@ export const otherTools = [
           url: '/favicon/',
           cateId: 7,
           cate: '其他工具'
-        },
-        {
-          title: 'ASCII艺术字生成器',
-          logo: '/images/logo/ascii.png',
-          desc: '在线生成ascii码艺术字',
-          url: '/asciiFont/',
-          cateId: 7,
-          cate: '其他工具'
-        },
+        }
       ]
     }
 ]

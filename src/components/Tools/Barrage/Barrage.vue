@@ -3,7 +3,7 @@ import { onBeforeMount, reactive,ref } from 'vue'
 import DetailHeader from '@/components/Layout/DetailHeader/DetailHeader.vue'
 import ToolDetail from '@/components/Layout/ToolDetail/ToolDetail.vue'
 // import { ElMessage } from 'element-plus'
-import vueDanmaku  from 'vue3-danmaku'  //https://www.npmjs.com/package/vue3-danmaku
+import vueDanmaku  from 'vue3-danmaku'
 const info = reactive({
   title: "手持弹幕",
   content: '工具坊',
@@ -58,7 +58,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div class="flex flex-col mt-3 flex-1">
+  <div class="flex flex-col flex-1 mt-3">
     <DetailHeader :title="info.title"></DetailHeader>
 
     <!-- 全屏 -->
@@ -84,20 +84,20 @@ onBeforeMount(() => {
       </template>
     </vue-danmaku>
 
-    <div class="p-4 rounded-2xl bg-white">
+    <div class="p-4 bg-white rounded-2xl">
       <div class="flex mb-2">
         <el-text class="w-20">弹幕内容:</el-text>
-        <div class="w-72"><el-input v-model="info.content" type="textarea" rows="3"></el-input></div>
+        <div class="w-72"><el-input v-model="info.content" type="textarea" :rows="3"></el-input></div>
       </div>
 
       <div class="flex mb-2">
         <el-text class="w-20">播放速度:</el-text>
-        <div class="w-72 ml-2"><el-slider v-model="info.speed" :min="1" :max="500"/></div>
+        <div class="ml-2 w-72"><el-slider v-model="info.speed" :min="1" :max="500"/></div>
       </div>
 
       <div class="flex mb-2">
         <el-text class="w-20">文字大小:</el-text>
-        <div class="w-72 ml-2"><el-slider v-model="info.textSize" :min="12" :max="1000"/></div>
+        <div class="ml-2 w-72"><el-slider v-model="info.textSize" :min="12" :max="1000"/></div>
       </div>
 
       <div class="flex mb-2">

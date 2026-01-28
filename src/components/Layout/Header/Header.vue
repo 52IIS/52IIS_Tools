@@ -127,8 +127,7 @@ onMounted(() => {
           :loading="loading"
           class="ml-3"
           size="large"
-          @change="(value) =>{ selectedOption = value;console.log(selectedOption)}"
-          @keyup.enter="selectedOption && optionClick(selectedOption)"
+          @change="(value) =>{ selectedOption = value;optionClick(value)}"
         >
           <el-option
             v-for="(item, index) in options"

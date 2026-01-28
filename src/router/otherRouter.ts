@@ -382,16 +382,6 @@ export const otherRoute = [
     }
   },
   {
-    path: '/asciiwordpic',
-    component: () => import('@/components/Tools/ASCIIWordPic/ASCIIWordPic.vue'),
-    name: 'asciiWordPic',
-    meta: {
-      title: "ASCII字形生成器",
-      keywords: 'ASCII画,字形画,字形生成器',
-      description: '在线生成字形ASCII画',
-    }
-  },
-  {
     path: '/jsforamt',
     component: () => import('@/components/Tools/JSFormat/JSFormat.vue'),
     name: 'JSForamt',

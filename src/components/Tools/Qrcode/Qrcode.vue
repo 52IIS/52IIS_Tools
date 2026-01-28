@@ -91,7 +91,7 @@ const downloadQRCode = () => {
       <div class="w-4/6">
         <div class="flex mb-3">
           <div class="mr-2 w-16"><el-text>内容</el-text></div>
-          <el-input v-model="info.content" type="textarea" rows="3" class="w-full" placeholder="可在此输入文字或网址"></el-input>
+          <el-input v-model="info.content" type="textarea" :rows="3" class="w-full" placeholder="可在此输入文字或网址"></el-input>
         </div>
         <div class="flex mb-3">
           <div class="mr-2 w-16"><el-text>尺寸</el-text></div>

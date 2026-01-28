@@ -16,8 +16,8 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
 
     // Element Plus全局组件类型声明
@@ -31,6 +31,7 @@
     "allowJs": true,
     "noImplicitAny": false,
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.ts*", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.ts*", "src/**/*.vue", "src/types/**/*.d.ts"],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

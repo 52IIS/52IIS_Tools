@@ -29,11 +29,6 @@ const result = reactive({
 // 错误信息
 const errorMessage = ref('')
 
-// 切换输入类型
-const switchInputType = (type: string) => {
-  inputType.value = type
-}
-
 // IP地址验证
 const validateIp = (ip: string): boolean => {
   const ipRegex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
@@ -177,9 +172,12 @@ const clearInput = () => {
   errorMessage.value = ''
   
   // 清空结果
-  Object.keys(result).forEach(key => {
-    result[key as keyof typeof result] = '' as any
-  })
+  result.networkAddress = ''
+  result.broadcastAddress = ''
+  result.subnetMask = ''
+  result.cidr = ''
+  result.ipRange = ''
+  result.wildcardMask = ''
   result.totalHosts = 0
   result.usableHosts = 0
 }

@@ -22,7 +22,7 @@
       </div>
 
       <div v-if="loading" class="mt-3">
-        <el-alert type="info" :message="'正在处理，请稍候...'" show-icon :closable="false" />
+        <el-alert type="info" :title="'正在处理，请稍候...'" show-icon :closable="false" />
       </div>
 
       <div v-if="images.length" class="mt-3">
@@ -34,14 +34,14 @@
             <img :src="img" :alt="'第'+(idx+1)+'页'" @click="preview(img)" />
             <div class="img-info">
               <span>第 {{ idx + 1 }} 页</span>
-              <el-button type="primary" size="small" :href="img" :download="'page-'+(idx+1)+'.png'">下载</el-button>
+              <el-button type="primary" size="small" @click="downloadSingleImage(img, idx)">下载</el-button>
             </div>
           </div>
         </div>
       </div>
 
       <div v-if="errorMsg" class="mt-3">
-        <el-alert type="error" :message="errorMsg" show-icon :closable="false" />
+        <el-alert type="error" :title="errorMsg" show-icon :closable="false" />
       </div>
     </div>
 
@@ -108,7 +108,7 @@ const onFileChange = async (file: any) => {
       canvas.width = viewport.width;
       canvas.height = viewport.height;
       const context = canvas.getContext('2d');
-      await page.render({ canvasContext: context!, viewport }).promise;
+      await page.render({ canvasContext: context!, viewport, canvas }).promise;
       images.value.push(canvas.toDataURL('image/png'));
     }
   } catch (err) {
@@ -126,11 +126,17 @@ async function downloadZip() {
   if (!images.value.length) return;
   const zip = new JSZip();
   images.value.forEach((img, idx) => {
-    // 去掉 data:image/png;base64, 前缀
     zip.file(`page-${idx + 1}.png`, img.split(',')[1], { base64: true });
   });
   const blob = await zip.generateAsync({ type: 'blob' });
   saveAs(blob, 'pdf-images.zip');
+}
+
+function downloadSingleImage(img: string, idx: number) {
+  const link = document.createElement('a');
+  link.href = img;
+  link.download = `page-${idx + 1}.png`;
+  link.click();
 }
 </script>
 

@@ -180,7 +180,12 @@ const mergePDFs = async () => {
     const pdfBytes = await mergedPdf.save();
     
     // 创建Blob URL
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    const arrayBuffer = new ArrayBuffer(pdfBytes.length);
+    const view = new Uint8Array(arrayBuffer);
+    for (let i = 0; i < pdfBytes.length; i++) {
+      view[i] = pdfBytes[i];
+    }
+    const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
     mergedPDF.value = URL.createObjectURL(blob);
   } catch (err) {
     errorMsg.value = 'PDF合并失败，请检查文件是否损坏';

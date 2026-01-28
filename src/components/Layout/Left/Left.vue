@@ -65,7 +65,7 @@ onMounted(async () => {
       <!-- logo -->
       <div class="flex justify-center">
         <router-link class="flex flex-row h-24" to="/">
-          <img class="mt-auto mr-2 mb-auto w-auto h-12 rounded-lg" src="@/assets/logo.png" :alt="appNet">
+          <img class="mt-auto mr-2 mb-auto w-auto h-12 rounded-lg" src="@/assets/logo.png" :alt="appName">
           <div class="flex flex-col mt-auto mb-auto">
             <div class="text-2xl">{{ appName }}</div>
             <!-- <div class="text-2xl">{{ appName }}</div> -->
