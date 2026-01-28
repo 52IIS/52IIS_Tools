@@ -462,6 +462,16 @@ export const otherRoute = [
     }
   },
   {
+    path: '/pdfmerge',
+    component: () => import('@/components/Tools/PdfMerge/PdfMerge.vue'),
+    name: 'PdfMerge',
+    meta: {
+      title: "PDF合并",
+      keywords: 'PDF合并,将多个PDF文档合并为一个PDF文档',
+      description: '将多个PDF文档合并为一个PDF文档',
+    }
+  },
+  {
     path: '/favicon',
     component: () => import('@/components/Tools/Favicon/Favicon.vue'),
     name: 'Favicon',
