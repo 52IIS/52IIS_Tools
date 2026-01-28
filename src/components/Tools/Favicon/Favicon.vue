@@ -107,7 +107,7 @@
 
       <!-- 错误提示 -->
       <div v-if="errorMsg" class="mt-3">
-        <el-alert type="error" :message="errorMsg" show-icon :closable="true" @close="errorMsg = ''" />
+        <el-alert type="error" :title="errorMsg" show-icon :closable="true" @close="errorMsg = ''" />
       </div>
     </div>
 

@@ -17,7 +17,7 @@
       </div>
 
       <div v-if="errorMsg" class="mt-3">
-        <el-alert type="error" :message="errorMsg" show-icon :closable="false" />
+        <el-alert type="error" :title="errorMsg" show-icon :closable="false" />
       </div>
 
       <div class="mt-3 player-area">
