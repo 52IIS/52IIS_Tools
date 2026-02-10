@@ -7,11 +7,11 @@ const info = reactive({
   title: "数字转金额大写",
   content: '',
   tranRes: '',
+  unit: '元'
 })
 
 const tran = () => {
-  //数字转中文
-  info.tranRes = numberToChinese(parseInt(info.content))
+  info.tranRes = numberToChinese(parseFloat(info.content), info.unit)
 }
 
 const clear = () => {
@@ -30,7 +30,14 @@ const copyRes = async (resStr: string) => {
 
     <div class="p-4 bg-white rounded-2xl">
       <div>
-        <el-input type="number" v-model="info.content" placeholder="请输入数字，最高13位数字"></el-input>
+        <el-input v-model="info.content" placeholder="请输入数字，支持小数，最高13位数字"></el-input>
+      </div>
+
+      <div class="mt-3">
+        <el-radio-group v-model="info.unit">
+          <el-radio value="元">元</el-radio>
+          <el-radio value="圆">圆</el-radio>
+        </el-radio-group>
       </div>
 
       <div class="mt-4">
@@ -47,8 +54,13 @@ const copyRes = async (resStr: string) => {
     <!-- desc -->
     <ToolDetail title="描述">
       <el-text>
-        可以将阿拉伯数字金额转换为中文大写金额的在线工具;用户输入阿拉伯数字金额，如100，会立即转换成“壹佰”的中文
-      </el-text> 
+        可以将阿拉伯数字金额转换为中文大写金额的在线工具;用户输入阿拉伯数字金额，如100，会立即转换成"壹佰"的中文；支持小数转换，如10.5会转换成"壹拾伍角"；支持选择"元"或"圆"作为货币单位
+      </el-text>
+      <div class="mt-2">
+        <el-text type="info" size="small">
+          说明："元"是人民币的标准简化写法，"圆"是传统写法，两者在金额表达上含义相同，可根据使用场景选择
+        </el-text>
+      </div>
     </ToolDetail>
   </div>
 </template>

@@ -71,11 +71,40 @@ export function genRandomStrByChars(chars: string, length: number): string {
  * @param num 
  * @returns 
  */
-export function numberToChinese(num: number): string {
-  // const units = ['', '拾', '佰', '仟', '万', '亿'];  
+export function numberToChinese(num: number, unit: string = '元'): string {
   const units = ['', '拾', '佰', '仟', '万', '拾', '佰', '仟', '亿', '拾', '佰', '仟', '万'];  
   const chars = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];  
   let numStr = num.toString()
+  
+  if (numStr.includes('.')) {
+    const parts = numStr.split('.')
+    const integerPart = parts[0]
+    const decimalPart = parts[1]
+    
+    let result = ''
+    
+    if (integerPart && integerPart !== '0') {
+      result += convertIntegerPart(integerPart, units, chars) + unit
+    }
+    
+    if (decimalPart && decimalPart !== '0') {
+      const decimalChars = ['角', '分']
+      for (let i = 0; i < decimalPart.length && i < 2; i++) {
+        const n = parseInt(decimalPart[i])
+        if (n !== 0) {
+          result += chars[n] + decimalChars[i]
+        }
+      }
+    }
+    
+    return result || ('零' + unit)
+  } else {
+    const chinese = convertIntegerPart(numStr, units, chars)
+    return chinese + unit
+  }
+}
+
+function convertIntegerPart(numStr: string, units: string[], chars: string[]): string {
   let len = numStr.length
   if (len > 13) {
     ElMessage({
@@ -102,15 +131,13 @@ export function numberToChinese(num: number): string {
       isZero = false;  
       zeroCount = 0;  
     }  
-    // debugger
   }
-
 
   if (chinese.endsWith(chars[0])) {  
     chinese = chinese.substring(0, chinese.length - 1);  
   }  
   
-  return chinese;  
+  return chinese || '零'
 }
 
 //rtrim: 删除右侧指定字符， 默认删除空格
