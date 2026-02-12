@@ -67,7 +67,40 @@ export const otherTools = [
           url: '/favicon/',
           cateId: 7,
           cate: '其他工具'
-        }
+        },
+        // base64照片互相转换
+        {
+          title: 'base64照片互相转换',
+          logo: '/images/logo/base64.png',
+          desc: '将图片转换为base64编码，或将base64编码转换为图片',
+          url: '/base64/',
+          cateId: 7,
+          cate: '其他工具'
+        },
+        {
+          title: '摩斯电码',
+          logo: '/images/logo/medium.png',
+          desc: '支持中文的摩斯电码编码解码',
+          url: '/morse/',
+          cateId: 7,
+          cate: '其他工具'
+        },
+        {
+          title: '常用进制转换',
+          logo: '/images/logo/scaletran.png',
+          desc: '在线进制转换工具,可在2到64进制之间相互转换',
+          url: '/scaletran/',
+          cateId: 7,
+          cate: '其他工具'
+        },
+        {
+          title: 'ASCII码表',
+          logo: '/images/logo/ascii.png',
+          desc: 'ASCII码表,控制代码、标准ASCII字符和非标准ASCII字符对照表',
+          url: '/ascii/',
+          cateId: 7,
+          cate: '其他工具'
+        },
       ]
     }
 ]

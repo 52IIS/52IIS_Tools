@@ -152,16 +152,6 @@ export const otherRoute = [
     }
   },
   {
-    path: '/unit',
-    component: () => import('@/components/Tools/Unit/Unit.vue'),
-    name: 'unit',
-    meta: {
-      title: "单位转换",
-      keywords: '在线单位换算,长度单位换算,面积单位换算,时间单位换算,重量单位换算,温度单位换算,压力单位换算,热量单位换算,功率单位换算。',
-      description: '在线单位换算,长度单位换算,面积单位换算,时间单位换算,重量单位换算,温度单位换算,压力单位换算,热量单位换算,功率单位换算。',
-    }
-  },
-  {
     path: '/qrcode',
     component: () => import('@/components/Tools/Qrcode/Qrcode.vue'),
     name: 'qrcode',
@@ -480,5 +470,15 @@ export const otherRoute = [
       keywords: 'ASCII艺术字生成器,在线生成ascii码艺术字',
       description: '在线生成ascii码艺术字',
     }
-  }
+  },
+  {
+    path: '/base64',
+    component: () => import('@/components/Tools/Base64/Base64.vue'),
+    name: 'Base64',
+    meta: {
+      title: "base64照片互相转换",
+      keywords: 'base64照片互相转换,将图片转换为base64编码，或将base64编码转换为图片',
+      description: '将图片转换为base64编码，或将base64编码转换为图片',
+    }
+  },
 ]

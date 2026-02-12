@@ -1,5 +1,7 @@
 import type { ToolsReqData } from '@/menu/tools.type.ts'
 import { otherTools } from '@/menu/otherTools.ts'
+import { chartTools } from '@/menu/chartTools.ts'
+import { queryTools } from '@/menu/queryTools.ts'
 
 //获取tools分类与对应的工具
 export function getToolsCate() {
@@ -272,172 +274,11 @@ export function getToolsCate() {
         },
       ]
     },
-    // {
-    //   id: 6,
-    //   title: '查询相关',
-    //   icon: '',
-    //   list: [
-    //     {
-    //       title: 'IP查询',
-    //       logo: '/images/logo/IP.png',
-    //       desc: '在线查询ip地址、ip归属地',
-    //       url: '/ip',
-    //       cateId: 6,
-    //       cate: '查询相关',
-    //     },
-    //     {
-    //       title: '网站favicon获取',
-    //       logo: '/images/logo/text_to_img.png',
-    //       desc: '获取网站logo、icon、favicon、标题、关键词、描述等信息',
-    //       url: '/webInfo',
-    //       cateId: 6,
-    //       cate: '查询相关',
-    //     }
-    //   ]
-    // },
-    {
-      id: 7,
-      title: '教育学术',
-      icon: '',
-      list: [
-        {
-          title: '单位换算',
-          logo: '/images/logo/unit.png',
-          desc: '在线重量、长度、面积、时间、角度、速度、温度、压力、热量、功率等换算',
-          url: '/unit/',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '摩斯电码',
-          logo: '/images/logo/medium.png',
-          desc: '支持中文的摩斯电码编码解码',
-          url: '/morse/',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '常用进制转换',
-          logo: '/images/logo/scaletran.png',
-          desc: '在线进制转换工具,可在2到64进制之间相互转换',
-          url: '/scaletran/',
-          cateId: 4,
-          cate: '教育学术',
-        },
-        {
-          title: 'ASCII码表',
-          logo: '/images/logo/ascii.png',
-          desc: 'ASCII码表,控制代码、标准ASCII字符和非标准ASCII字符对照表',
-          url: '/ascii/',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '长度单位转换',
-          logo: '/images/logo/length.png',
-          desc: '长度转换工具-支持国际长度单位，中国传统长度单位，英制长度单位',
-          url: '/unit/?active=length',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '面积单位转换',
-          logo: '/images/logo/area.png',
-          desc: '面积转换工具-支持国际面积单位，中国传统面积单位，英制面积单位',
-          url: '/unit/?active=area',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '重量单位转换',
-          logo: '/images/logo/weight.png',
-          desc: '重量转换工具-支持国际重量单位，中国传统重量单位，英制重量单位(常衡制和金衡制)',
-          url: '/unit/?active=weight',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '时间单位转换',
-          logo: '/images/logo/time_unit.png',
-          desc: '时间单位转换工具-支持国际时间单位',
-          url: '/unit/?active=time',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '温度单位转换',
-          logo: '/images/logo/temperature.png',
-          desc: '温度单位转换工具-支持国际温度单位',
-          url: '/unit/?active=temperature',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '压力单位转换',
-          logo: '/images/logo/pressure.png',
-          desc: '压力单位转换工具-Pa/kPa/hPa/MPa/bar/torr/psi等',
-          url: '/unit/?active=pressure',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '热量单位转换',
-          logo: '/images/logo/heat.png',
-          desc: '热量单位转换工具-Wh/mWh/kWh/MWh/J/kJ等',
-          url: '/unit/?active=heat',
-          cateId: 4,
-          cate: '教育学术'
-        },
-        {
-          title: '功率单位转换',
-          logo: '/images/logo/power.png',
-          desc: '功率单位转换工具-W/mW/kW/MW/GW等',
-          url: '/unit/?active=power',
-          cateId: 4,
-          cate: '教育学术'
-        },
-      ]
-    },
-    {
-      id: 8,
-      title: '数据图表',
-      icon: '',
-      list: [
-        {
-          title: '柱状图',
-          logo: '/images/logo/bar.png',
-          desc: '在线制作柱状图，像做表格一样制作可视化图表，支持导出静态或动态图表',
-          url: '/bar/',
-          cateId: 8,
-          cate: '数据图表',
-        },{
-          title: '折线图',
-          logo: '/images/logo/line.png',
-          desc: '在线制作折线图，像做表格一样制作可视化图表，支持导出静态或动态图表',
-          url: '/line/',
-          cateId: 8,
-          cate: '数据图表',
-        },
-        {
-          title: '饼图',
-          logo: '/images/logo/pie.png',
-          desc: '在线制作饼图，像做表格一样制作可视化图表，支持导出静态或动态图表',
-          url: '/pie/',
-          cateId: 8,
-          cate: '数据图表',
-        },
-        {
-          title: '散点图',
-          logo: '/images/logo/scatter.png',
-          desc: '在线制作散点图，像做表格一样制作可视化图表，支持导出静态或动态图表',
-          url: '/scatter/',
-          cateId: 8,
-          cate: '数据图表',
-        }
-      ]
-    },
+    //数据图表工具
+    ...chartTools,
+    ...queryTools,
     //其他工具
-    ...otherTools
+    ...otherTools,
   ]
 }
 
