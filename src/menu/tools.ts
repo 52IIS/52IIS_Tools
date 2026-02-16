@@ -1,6 +1,7 @@
 import type { ToolsReqData } from '@/menu/tools.type.ts'
 import { otherTools } from '@/menu/otherTools.ts'
 import { chartTools } from '@/menu/chartTools.ts'
+import { pdfTools } from '@/menu/pdfTools.ts'
 import { queryTools } from '@/menu/queryTools.ts'
 
 //获取tools分类与对应的工具
@@ -277,6 +278,7 @@ export function getToolsCate() {
     //数据图表工具
     ...chartTools,
     ...queryTools,
+    ...pdfTools,
     //其他工具
     ...otherTools,
   ]
