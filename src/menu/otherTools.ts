@@ -53,6 +53,14 @@ export const otherTools = [
           cate: '其他工具'
         },
         {
+          title: '照片合并为PDF',
+          logo: '/images/logo/pdf.png',
+          desc: '将多张照片合并为一个PDF文档',
+          url: '/img2pdf/',
+          cateId: 7,
+          cate: '其他工具'
+        },
+        {
           title: 'PDF合并',
           logo: '/images/logo/pdf.png',
           desc: '将多个PDF文档合并为一个PDF文档',

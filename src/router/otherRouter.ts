@@ -441,6 +441,17 @@ export const otherRoute = [
       description: '将PDF文档转换为图片，支持批量转换',
     }
   },
+  // 照片合并为PDF
+  {
+    path: '/img2pdf',
+    component: () => import('@/components/Tools/Img2Pdf/Img2Pdf.vue'),
+    name: 'Img2Pdf',
+    meta: {
+      title: "照片合并为PDF",
+      keywords: '照片合并为PDF,将多张照片合并为一个PDF文档',
+      description: '将多张照片合并为一个PDF文档',
+    }
+  },
   {
     path: '/pdfmerge',
     component: () => import('@/components/Tools/PdfMerge/PdfMerge.vue'),
