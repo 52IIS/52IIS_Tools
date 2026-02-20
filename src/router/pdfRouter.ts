@@ -32,4 +32,15 @@ export const pdfRoute = [
       description: '将多个PDF文档合并为一个PDF文档',
     }
   },
+  // PDF压缩
+  {
+    path: '/pdfcompress',
+    component: () => import('@/components/Tools/PdfCompress/PdfCompress.vue'),
+    name: 'PdfCompress',
+    meta: {
+      title: "PDF压缩",
+      keywords: 'PDF压缩,压缩PDF文档大小',
+      description: '压缩PDF文档大小，支持批量压缩',
+    }
+  },
 ]

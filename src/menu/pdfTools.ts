@@ -28,6 +28,14 @@ export const pdfTools = [
           cateId: 10,
           cate: 'PDF工具箱'
         },
+        {
+          title: 'PDF压缩',
+          logo: '/images/logo/pdf.png',
+          desc: '压缩PDF文档大小，支持批量压缩',
+          url: '/pdfcompress/',
+          cateId: 10,
+          cate: 'PDF工具箱'
+        },
       ]
     }
 ]

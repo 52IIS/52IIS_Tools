@@ -7,7 +7,7 @@
         <el-text type="info">将多张照片合并为单个PDF文件，支持自定义页面大小、方向、照片旋转和位置调整。</el-text>
       </div>
 
-      <div class="settings-section mb-4">
+      <div class="mb-4 settings-section">
         <div class="settings-row">
           <div class="setting-item">
             <span class="setting-label">页面大小：</span>
@@ -46,7 +46,7 @@
       </div>
 
       <div v-if="images.length" class="images-section">
-        <div class="images-toolbar mb-3">
+        <div class="mb-3 images-toolbar">
           <el-text type="info">共 {{ images.length }} 张照片</el-text>
           <div class="toolbar-actions">
             <el-button size="small" @click="selectAll">全选</el-button>
@@ -197,7 +197,7 @@
 
     <el-dialog v-model="backgroundPickerVisible" title="设置背景图片" width="500px">
       <div v-if="currentEditImage !== null" class="background-picker">
-        <div class="current-background mb-3">
+        <div class="mb-3 current-background">
           <el-text>当前背景：</el-text>
           <div v-if="images[currentEditImage]?.background" class="background-preview">
             <img :src="images[currentEditImage]?.background ?? undefined" />
