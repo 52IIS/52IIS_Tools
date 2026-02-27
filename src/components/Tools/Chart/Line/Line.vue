@@ -30,7 +30,7 @@ const attrColor = ref('#5470c6')
 //标题位置
 const titlePos = ref('center')
 //标题
-const title = ref('Tools-Web')
+const title = ref('52IIS-Tools-Web')
 //副标题
 const subTitle = ref('在线图表制作工具')
 //显示标题 - 开关
@@ -40,7 +40,7 @@ const subTitleSwitch = ref(true)
 
 /** 水印 */
 const watermarkSwitch = ref(false)  //开关
-const waterMarkText = ref('Tools-Web');
+const waterMarkText = ref('52IIS-Tools-Web');
 
 //创建水印
 const createWatermark = () => {
