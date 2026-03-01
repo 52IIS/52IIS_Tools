@@ -36,6 +36,22 @@ export const pdfTools = [
           cateId: 10,
           cate: 'PDF工具箱'
         },
+        {
+          title: 'PDF长截图',
+          logo: '/images/logo/pdf.png',
+          desc: '将PDF文档转换为长截图，支持批量转换',
+          url: '/pdflongshot/',
+          cateId: 10,
+          cate: 'PDF工具箱'
+        },
+        {
+          title: 'PDF页面管理',
+          logo: '/images/logo/pdf.png',
+          desc: '（删除）或（插入）PDF文档的某一页',
+          url: '/pdfpage/',
+          cateId: 10,
+          cate: 'PDF工具箱'
+        },
       ]
     }
 ]

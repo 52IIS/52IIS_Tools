@@ -43,4 +43,26 @@ export const pdfRoute = [
       description: '压缩PDF文档大小，支持批量压缩',
     }
   },
+  // PDF长截图
+  {
+    path: '/pdflongshot',
+    component: () => import('@/components/Tools/PdfLongShot/PdfLongShot.vue'),
+    name: 'PdfLongShot',
+    meta: {
+      title: "PDF长截图",
+      keywords: 'PDF长截图,将PDF文档转换为长截图',
+      description: '将PDF文档转换为长截图，支持批量转换',
+    }
+  },
+  // 删除或插入PDF文档的某一页
+  {
+    path: '/pdfpage',
+    component: () => import('@/components/Tools/PdfPage/PdfPage.vue'),
+    name: 'PdfPage',
+    meta: {
+      title: "PDF页面管理",
+      keywords: 'PDF页面管理,（删除）或（插入）PDF文档的某一页',
+      description: '（删除）或（插入）PDF文档的某一页',
+    }
+  },
 ]

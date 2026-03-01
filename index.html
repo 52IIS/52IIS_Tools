@@ -20,6 +20,7 @@
     <script>
       var _hmt = _hmt || [];
       (function() {
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?ffc866d496dbba322b8bc425d72acf60";
         var s = document.getElementsByTagName("script")[0]; 
