@@ -6,7 +6,7 @@ import DetailHeader from '@/components/Layout/DetailHeader/DetailHeader.vue'
 import ToolDetail from '@/components/Layout/ToolDetail/ToolDetail.vue'
 import { copy } from '@/utils/string'
 const info = reactive({
-  title: "时间戳转换",
+  title: "⏱️ 时间戳转换",
   nowTime: Jh_getTimeStamp(),
   isPlay: true,
   waitTimeStamp: Jh_getTimeStamp(),//待转换的时间戳
@@ -80,30 +80,44 @@ const timeTran = (type: string) => {
 const copyRes = async () => {
   copy('' + info.nowTime)
 }
+
+//复制转换后的日期
+const copyTranDate = async () => {
+  if (info.tranDate) copy(info.tranDate)
+}
+
+//复制转换后的时间戳
+const copyTranTimeStamp = async () => {
+  if (info.tranTimeStamp) copy('' + info.tranTimeStamp)
+}
 </script>
 
 <template>
-  <div class="flex flex-col mt-3 ml-4 flex-1">
+  <div class="flex flex-col flex-1 mt-3 ml-4">
     <DetailHeader :title="info.title"></DetailHeader>
-    <div class="flex flex-col p-4 rounded-2xl bg-white">
+    <div class="flex flex-col p-4 bg-white rounded-2xl">
       <div class="flex flex-direction">
         <el-text class="mr-2 w-12">现在</el-text>
-        <el-button class="mr-3" link @click="copyRes()">{{ info.nowTime }} <el-icon class="ml-1 mr-1"><CopyDocument /></el-icon></el-button>
+        <el-button class="mr-3" link @click="copyRes()">{{ info.nowTime }} <el-icon class="mr-1 ml-1"><CopyDocument /></el-icon></el-button>
         <el-button v-if="info.isPlay" type="danger" link class="flex items-center" @click="isPlayChange()"><el-icon class="mr-1" size="16"><VideoPlay/></el-icon>停止</el-button>
         <el-button v-else="info.isPlay" type="primary" link class="flex items-center" @click="isPlayChange()"><el-icon class="mr-1" size="16"><VideoPause /></el-icon>开始</el-button>
       </div>
 
-      <div class="flex flex-direction mt-4 justify-start">
+      <div class="flex justify-start mt-4 flex-direction">
         <el-text class="mr-2 w-12">时间戳</el-text>
         <el-input v-model="info.waitTimeStamp" class="h-8 mr-2 w-60 max-w-[30%]" placeholder="毫秒/秒">
         </el-input> 
         <el-button class="mr-2 max-w-[25%]" @click="timeTran('toDate')">转换</el-button>
-        <el-input v-model="info.tranDate" class="h-8 w-72 mr-2 max-w-[30%]" placeholder="北京时间"></el-input>
+        <el-input v-model="info.tranDate" class="h-8 w-72 mr-2 max-w-[30%]" placeholder="北京时间">
+          <template #append>
+            <el-button :icon="CopyDocument" @click="copyTranDate()" :disabled="!info.tranDate" />
+          </template>
+        </el-input>
       </div>
 
-      <div class="flex flex-direction mt-4 justify-start">
+      <div class="flex justify-start mt-4 flex-direction">
         <el-text class="mr-2 w-12">时间</el-text>
-        <el-input v-model="info.waitDate" class="h-8 mr-2 w-60 max-w-[30%]"></el-input> 
+        <el-date-picker v-model="info.waitDate" type="datetime" class="h-8 mr-2 w-60 max-w-[30%]" format="YYYY-MM-DD HH:mm:ss" value-format="YYYY-MM-DD HH:mm:ss" /> 
         <el-button class="mr-2 max-w-[25%]" @click="timeTran('toStamp')">转换</el-button>
         <el-input v-model="info.tranTimeStamp" :value="info.tranTimeStamp == 0 ? '' : info.tranTimeStamp" class="h-8 w-72 mr-2 max-w-[30%]" placeholder="时间戳">
           <template #prepend>
@@ -115,6 +129,9 @@ const copyRes = async () => {
                 :value="item.value"
               />
             </el-select>
+          </template>
+          <template #append>
+            <el-button :icon="CopyDocument" @click="copyTranTimeStamp()" :disabled="!info.tranTimeStamp" />
           </template>
         </el-input>
       </div>
