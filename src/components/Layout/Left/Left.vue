@@ -52,6 +52,10 @@ const gotoAnchor = (anchor: string) => {
 const gotoAbout = () => {
   router.push('/about')
 }
+// 跳转到https://ps.52iis.com
+const gotoPS = () => {
+  window.open('https://ps.52iis.com', '_blank')
+}
 
 onMounted(async () => {
   await getToolCates()
@@ -103,6 +107,12 @@ onMounted(async () => {
               </el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
+          <el-menu-item index="ps" @click="gotoPS">
+            <template #title>
+                <svg t="1702896616706" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5262" width="20" height="20"><path fill="currentColor" d="M820.9 256.8c-23.3-42.3-64.4-68.8-113.9-68.8h-373c-49.5 0-90.6 26.5-113.9 68.8l-104.2 187.6c-23.3 42.3-23.3 90.6 0 132.9l104.2 187.6c23.3 42.3 64.4 68.8 113.9 68.8h373c49.5 0 90.6-26.5 113.9-68.8l104.2-187.6c23.3-42.3 23.3-90.6 0-132.9l-104.2-187.6zm-497.9 187.6c0-49.5 40.5-90 90-90s90 40.5 90 90-40.5 90-90 90-90-40.5-90-90zm270 0c0-49.5 40.5-90 90-90s90 40.5 90 90-40.5 90-90 90-90-40.5-90-90z"/></svg>
+                <span class="ml-2">在线免费PS</span>
+            </template>
+          </el-menu-item>
           <el-menu-item index="about" @click="gotoAbout">
             <template #title>
                 <svg t="1702896616706" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5262" width="20" height="20">
