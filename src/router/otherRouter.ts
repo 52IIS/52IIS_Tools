@@ -62,16 +62,6 @@ export const otherRoute = [
     }
   },
   {
-    path: '/ip',
-    component: () => import('@/components/Tools/Ip/Ip.vue'),
-    name: 'ip',
-    meta: {
-      title: "IP查询",
-      keywords: 'ip,ip查询,ip地址查询,ip138,查ip,我的ip,公网ip,ip归属地查询',
-      description: '公网ip地址归属地查询',
-    }
-  },
-  {
     path: '/scaletran',
     component: () => import('@/components/Tools/ScaleTran/ScaleTran.vue'),
     name: 'scaletran',
@@ -239,16 +229,6 @@ export const otherRoute = [
       title: "文本转图片",
       keywords: '文本生成图片，文本生成长图，推广长图',
       description: '把文本转换成图片，生成长图，具有超多个性文字排版',
-    }
-  },
-  {
-    path: '/webinfo',
-    component: () => import('@/components/Tools/WebInfo/WebInfo.vue'),
-    name: 'webInfo',
-    meta: {
-      title: "网站favicon获取",
-      keywords: '获取网站logo,获取网站icon,获取网站favicon,获取网站标题,获取网站关键词,获取网站描述',
-      description: '获取网站logo、icon、favicon、标题、关键词、描述等信息',
     }
   },
   {

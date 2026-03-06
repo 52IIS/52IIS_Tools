@@ -1,5 +1,6 @@
 import { pdfRoute } from './pdfRouter'
 import { chartRoute } from './chartRouter'
+import { queryRoute } from './queryRouter'
 import { otherRoute } from './otherRouter'
 //对外暴露配置路由(常量路由)
 export const constantRoute = [
@@ -16,6 +17,7 @@ export const constantRoute = [
   //图表路由
   ...chartRoute,
   ...pdfRoute,
+  ...queryRoute,
   ...otherRoute,
   // 关于
   {
