@@ -1,0 +1,7 @@
+# robots.txt for 52IIS Tools
+# 允许所有搜索引擎抓取
+User-Agent: *
+Allow: /
+
+# 提供网站地图链接
+Sitemap: https://www.52iis.com/sitemap.xml
