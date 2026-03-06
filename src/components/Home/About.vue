@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { Star, Cpu, Failed, Operation } from '@element-plus/icons-vue'
+
+const openGitHub = () => {
+  globalThis.window.open('https://github.com/52IIS/52IIS_Tools', '_blank')
+}
 </script>
 
 <template>
@@ -131,8 +135,7 @@ import { Star, Cpu, Failed, Operation } from '@element-plus/icons-vue'
               type="primary" 
               plain 
               size="small"
-              href="https://github.com/52IIS/52IIS_Tools" 
-              target="_blank"
+              @click="openGitHub"
             >
               <el-icon><Star /></el-icon>
               GitHub 仓库
