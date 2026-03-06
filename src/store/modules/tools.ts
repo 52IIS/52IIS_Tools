@@ -1,7 +1,7 @@
 //创建tools相关的小工具
 import { defineStore } from 'pinia'
 import { getTools, getToolsCate } from '@/menu/tools.ts'
-import { getIp } from '@/api/ip'
+import { getIp, getIpByProvider, ipProviders } from '@/api/ip'
 import type { ToolsReqData, ToolsInfo } from '@/menu/tools.type.ts'
 import type { IpReqData, IpInfo } from '@/api/ip/type'
 import type { WebInfo, WebInfoReqData } from '@/api/webinfo/type'
@@ -41,14 +41,10 @@ export const useToolsStore = defineStore('tools', {
       this.cates = await getToolsCate()
     },
     //获取ip
-    async getIp(data: IpReqData) {
-      const result: any = await getIp(data)
-      if (result.code == 200) {
-        this.ipData = result.data
-        return result.message
-      } else {
-        return Promise.reject(new Error(result.message))
-      }
+    async getIp(data: IpReqData, provider: string = 'ipinfo') {
+      const result = await getIpByProvider(data.ip, provider)
+      this.ipData = result
+      return '查询成功'
     },
     //获取网站信息
     async getWebInfo(data: WebInfoReqData) {

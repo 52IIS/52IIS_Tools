@@ -7,7 +7,15 @@ export interface IpReqData {
 export interface IpInfo {
   ip: string,
   pos: string,
-  isp: string
+  isp: string,
+  city?: string,
+  country?: string,
+  region?: string,
+  timezone?: string,
+  asn?: string,
+  organization?: string,
+  latitude?: number,
+  longitude?: number
 }
 
 //响应格式

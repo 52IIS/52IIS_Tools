@@ -13,14 +13,14 @@ export const queryTools = [
           cateId: 6,
           cate: '查询相关',
         },
-        {
-          title: '网站favicon获取',
-          logo: '/images/logo/text_to_img.png',
-          desc: '获取网站logo、icon、favicon、标题、关键词、描述等信息',
-          url: '/webInfo',
-          cateId: 6,
-          cate: '查询相关',
-        }
+        // {
+        //   title: '网站favicon获取',
+        //   logo: '/images/logo/text_to_img.png',
+        //   desc: '获取网站logo、icon、favicon、标题、关键词、描述等信息',
+        //   url: '/webInfo',
+        //   cateId: 6,
+        //   cate: '查询相关',
+        // }
       ]
     },
   ]

@@ -54,10 +54,10 @@ const down = () => {
 </script>
 
 <template>
-  <div class="flex flex-col mt-3 flex-1">
+  <div class="flex flex-col flex-1 mt-3">
     <DetailHeader :title="info.title"></DetailHeader>
 
-    <div class="p-4 rounded-2xl bg-white">
+    <div class="p-4 bg-white rounded-2xl">
       <div>
         <el-input
           v-model="searchUrl"
@@ -77,20 +77,20 @@ const down = () => {
             <el-text><b>域名: </b></el-text>
             <el-link :href="'https://' + searchUrl" type="primary" target="_blank">{{ searchUrl }}</el-link>
           </li>
-          <li class="mt-3 flex">
+          <li class="flex mt-3">
             <el-text><b>logo: </b></el-text>
-            <div v-if="toolsStore.webInfo.logo" class="ml-2 flex items-center">
+            <div v-if="toolsStore.webInfo.logo" class="flex items-center ml-2">
               <el-image :src="toolsStore.webInfo.logo" class="h-12"></el-image>
               <el-button class="ml-3" link type="primary" @click="down">下载</el-button>
             </div>
           </li>
-          <li class="mt-3 flex">
+          <li class="flex mt-3">
             <el-text><b>标题: </b>{{ toolsStore.webInfo.title }}</el-text>
           </li>
-          <li class="mt-3 flex">
+          <li class="flex mt-3">
             <el-text><b>关键词: </b> {{ toolsStore.webInfo.keywords }}</el-text>
           </li>
-          <li class="mt-3 flex">
+          <li class="flex mt-3">
             <el-text><b>描述: </b> {{ toolsStore.webInfo.desc }}</el-text>
           </li>
         </ul>
