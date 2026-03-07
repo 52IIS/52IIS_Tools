@@ -26,7 +26,18 @@ export const constantRoute = [
     name: 'about',
     meta: {
       title: "关于",
-      keywords: '关于ranblogs,关于工具站',
+      keywords: '关于52IIS,52IIS工具箱,关于工具站',
+      description: '',
+    }
+  },
+  // 友情连接
+  {
+    path: '/link',
+    component: () => import('@/components/Home/Link.vue'),
+    name: 'link',
+    meta: {
+      title: "友情连接",
+      keywords: '友情连接,网站链接',
       description: '',
     }
   },

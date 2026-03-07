@@ -57,6 +57,11 @@ const gotoPS = () => {
   window.open('https://ps.52iis.com', '_blank')
 }
 
+// 跳转到友情连接页面
+const gotoLink = () => {
+  router.push('/link')
+}
+
 onMounted(async () => {
   await getToolCates()
   
@@ -111,6 +116,14 @@ onMounted(async () => {
             <template #title>
                 <svg t="1702896616706" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5262" width="20" height="20"><path fill="currentColor" d="M820.9 256.8c-23.3-42.3-64.4-68.8-113.9-68.8h-373c-49.5 0-90.6 26.5-113.9 68.8l-104.2 187.6c-23.3 42.3-23.3 90.6 0 132.9l104.2 187.6c23.3 42.3 64.4 68.8 113.9 68.8h373c49.5 0 90.6-26.5 113.9-68.8l104.2-187.6c23.3-42.3 23.3-90.6 0-132.9l-104.2-187.6zm-497.9 187.6c0-49.5 40.5-90 90-90s90 40.5 90 90-40.5 90-90 90-90-40.5-90-90zm270 0c0-49.5 40.5-90 90-90s90 40.5 90 90-40.5 90-90 90-90-40.5-90-90z"/></svg>
                 <span class="ml-2">在线免费PS</span>
+            </template>
+          </el-menu-item>
+          <el-menu-item index="link" @click="gotoLink">
+            <template #title>
+                <svg t="1702896616706" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5262" width="20" height="20">
+                  <path fill="currentColor" d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372zm141.8-254.2c-12.5-12.5-32.8-12.5-45.3 0l-119.4 119.4c-12.5 12.5-32.8 12.5-45.3 0l-79.4-79.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l119.4 119.4c12.5 12.5 32.8 12.5 45.3 0l119.4-119.4c12.5-12.5 12.5-32.8 0-45.3z"/>
+                </svg>
+                <span class="ml-2">友情连接</span>
             </template>
           </el-menu-item>
           <el-menu-item index="about" @click="gotoAbout">
