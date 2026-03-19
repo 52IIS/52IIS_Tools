@@ -27,3 +27,6 @@ dist-ssr
 *.sw?
 
 public/sitemap.txt
+
+# 排除trae目录
+./trae/*

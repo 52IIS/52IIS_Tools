@@ -23,8 +23,13 @@ const links = [
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/52IIS/52IIS_Tools',
+    url: 'https://www.github.com/52IIS/52IIS_Tools',
     description: '52IIS_Tools项目仓库'
+  },
+  {
+    name: 'OTOClaw一键龙虾',
+    url: 'https://www.otoclaw.com',
+    description: 'OTOClaw是One-Touch OpenClaw的缩写，提供一键安装部署龙虾的便捷解决方案，快速上手，一键整合包，简化配置，让复杂的部署变得简单。'
   }
 ]
 
