@@ -4,7 +4,7 @@
   </div>
   <p>只需简单几步，即可快速搭建属于自己的在线工具箱。</p>
   <p>本项目基于 <a href="https://github.com/naroat/tools-web" target="_blank">tools-web</a> 进行二次修改创作。</p>
-  <p>本项目GitHub地址： <a href="https://github.com/52IIS/52IIS_Tools" target="_blank">https://github.com/52IIS/52IIS_Tools<a></p>
+  <p>本项目 GitHub 地址：<a href="https://github.com/52IIS/52IIS_Tools" target="_blank">https://github.com/52IIS/52IIS_Tools<a></p>
 
   [![node](https://img.shields.io/badge/node-18.14.2-red)](https://nodejs.org/)  [![vue](https://img.shields.io/badge/vue-3.3.10-green)](https://vuejs.org/)  [![tailwindcss](https://img.shields.io/badge/tailwindcss-3.3.5-yellow)](https://tailwindcss.com/)  [![elementplus](https://img.shields.io/badge/element--plus-2.7-blue)](https://element-plus.org/)  [![license](https://img.shields.io/github/license/52IIS/52IIS_Tools)](LICENSE)
 
@@ -29,7 +29,7 @@
 
 ### 手动部署 💻
 
-安装`pnpm`
+安装 `pnpm`
 ```bash
 npm install pnpm -g
 ```
@@ -61,11 +61,11 @@ pnpm dev
 pnpm build
 ```
 
-打包SEO静态页面 📄
+打包 SEO 静态页面 📄
 ```bash
 # 复制配置文件并修改
 cp .env.development .env.production
-# 将.env.production中的NODE_ENV值改为production
+# 将.env.production 中的 NODE_ENV 值改为 production
 
 # 运行打包命令
 pnpm build:pro
@@ -75,33 +75,33 @@ pnpm build:pro
 
 ### 开发运维 🔧
 - 🔑 随机密码生成
-- 🔗 URL编码/解码
-- 🔢 UUID生成器
+- 🔗 URL 编码/解码
+- 🔢 UUID 生成器
 - ⏰ 时间戳转换
-- 🔒 MD5在线加密/解密
-- 📝 JSON在线转换
+- 🔒 MD5 在线加密/解密
+- 📝 JSON 在线转换
 - 🔍 正则测试工具
-- 🌐 Unicode转中文
-- 📋 HTTP状态码
-- 🔐 JWT解析
-- 💻 HTML实体转义
-- 📄 JS代码格式化/压缩
-- 📄 HTML代码格式化
-- 🎨 CSS代码格式化/压缩
+- 🌐 Unicode 转中文
+- 📋 HTTP 状态码
+- 🔐 JWT 解析
+- 💻 HTML 实体转义
+- 📄 JS 代码格式化/压缩
+- 📄 HTML 代码格式化
+- 🎨 CSS 代码格式化/压缩
 
 ### 文本处理 📝
 - 🆚 文本对比
-- ✏️ Markdown编辑器
-- 🎨 ASCII字形生成器
+- ✏️ Markdown 编辑器
+- 🎨 ASCII 字形生成器
 - 🧹 文本去重
-- 📄 在线文本编辑/HTML获取
+- 📄 在线文本编辑/HTML 获取
 - 🔢 字数统计
 
 ### 教育学术 🎓
 - 🔄 单位换算
 - 📡 摩斯电码
 - 🔢 常用进制转换
-- 📊 ASCII码表
+- 📊 ASCII 码表
 - 📏 长度单位转换
 - 📐 面积单位转换
 - ⚖️ 重量单位转换
@@ -133,34 +133,35 @@ pnpm build:pro
 - 💰 数字转金额大写
 - 📢 手持弹幕
 - 🎨 色板
-- 🎨 Color选择器
-- 🎬 M3U8视频播放器
-- 📄 PDF转图片
-- 🖼️ Favicon在线制作
-- 🎨 ASCII艺术字生成器
+- 🎨 Color 选择器
+- 🎬 M3U8 视频播放器
+- 📄 PDF 转图片
+- 🖼️ Favicon 在线制作
+- 🎨 ASCII 艺术字生成器
+- 🧠 SBTI 人格测试
 
 ## 其他 ❓
 
 ### ❓ Q: 我应该如何添加新功能？
 
 A: 
-1. 在`menu/tools.ts`文件中添加工具信息
-2. 在`router/router.ts`中添加路由
-3. 拷贝示例目录`components/Tools/Example`修改名称，在这个拷贝出来的目录中开发工具即可
+1. 在 `menu/tools.ts` 文件中添加工具信息
+2. 在 `router/router.ts` 中添加路由
+3. 拷贝示例目录 `components/Tools/Example` 修改名称，在这个拷贝出来的目录中开发工具即可
 
-### ❓ Q: PDF转图片功能报错怎么办？
+### ❓ Q: PDF 转图片功能报错怎么办？
 
-A: 如果PDF转图片功能报错，请检查您的Web服务器配置：
+A: 如果 PDF 转图片功能报错，请检查您的 Web 服务器配置：
 
-- **IIS服务器**：确保已添加.mjs文件的MIME类型映射，设置为`application/javascript`
-- **Nginx服务器**：确保配置中包含对.mjs文件的正确MIME类型处理
+- **IIS 服务器**：确保已添加.mjs 文件的 MIME 类型映射，设置为 `application/javascript`
+- **Nginx 服务器**：确保配置中包含对.mjs 文件的正确 MIME 类型处理
   ```nginx
   types {
     application/javascript mjs;
   }
   ```
 
-这是因为PDF转图片功能依赖pdfjs-dist库，该库使用.mjs格式的模块文件。
+这是因为 PDF 转图片功能依赖 pdfjs-dist 库，该库使用.mjs 格式的模块文件。
 
 ### ❓ Q: 控制台出现 v-code-diff 相关错误？
 
