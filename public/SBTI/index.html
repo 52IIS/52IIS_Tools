@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SBTI 人格测试</title>
+  <title>SBTI 人格测试 - 52IIS</title>
   <style>
     :root {
       --bg: #f6faf6;
@@ -683,7 +683,7 @@
     }
   </style>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-38QD2KNPG3"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-38QD2KNPG3"></script> -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -727,6 +727,7 @@
         <div class="actions-bottom">
           <div class="hint" id="testHint">全选完才会放行。世界已经够乱了，起码把题做完整。</div>
           <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="back52IISBtn" class="btn-secondary">返回工具页</button>
             <button id="backIntroBtn" class="btn-secondary">返回首页</button>
             <button id="submitBtn" class="btn-primary" disabled>提交并查看结果</button>
           </div>
@@ -1746,6 +1747,7 @@
     }
 
     document.getElementById('startBtn').addEventListener('click', () => startTest(false));
+    document.getElementById('back52IISBtn').addEventListener('click', () => window.open('/', '_blank'));
     document.getElementById('backIntroBtn').addEventListener('click', () => showScreen('intro'));
     document.getElementById('submitBtn').addEventListener('click', renderResult);
     document.getElementById('restartBtn').addEventListener('click', () => startTest(false));
